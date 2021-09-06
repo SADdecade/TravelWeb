@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TravelWeb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="TravelWeb" target="11" />
       <module name="TravelWebsite" target="11" />
     </bytecodeTargetLevel>
   </component>
