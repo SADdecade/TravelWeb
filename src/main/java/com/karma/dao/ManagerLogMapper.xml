@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.karma.dao.ManagerLogMapper">
+
+
+    <insert id="addManagerLog" parameterType="com.karma.pojo.ManagerLog">
+        insert into travelweb.manage_logs(managerid, scenesid)
+        values (#{managerid}, #{scenesid})
+    </insert>
+    <select id="queryAllManagerLog" resultType="com.karma.pojo.ManagerLog">
+        select * from travelweb.manage_logs
+    </select>
+
+</mapper>
