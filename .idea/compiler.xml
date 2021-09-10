@@ -10,9 +10,8 @@
         <module name="TravelWeb" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="TravelWeb" target="11" />
-      <module name="TravelWebsite" target="11" />
+    <bytecodeTargetLevel target="8">
+      <module name="TravelWeb" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

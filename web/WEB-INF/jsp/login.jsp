@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -372,83 +373,6 @@
     </div>
   </div>
 </section>
-<!-- 评价部分 -->
-<section class="review" id="review">
-
-  <h1 class="heading">
-    <span>r</span>
-    <span>e</span>
-    <span>v</span>
-    <span>i</span>
-    <span>e</span>
-    <span>w</span>
-  </h1>
-
-  <div class="swiper-container review-slider">
-
-    <div class="swiper-wrapper">
-
-      <div class="swiper-slide">
-        <div class="box">
-          <img src="${pageContext.request.contextPath}/images/pic1.png" alt="">
-          <h3>小黑</h3>
-          <p>xxxxxxxxxx</p>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="box">
-          <img src="${pageContext.request.contextPath}/images/pic2.png" alt="">
-          <h3>小白</h3>
-          <p>xxxxxxxxxxxx</p>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="box">
-          <img src="${pageContext.request.contextPath}/images/pic3.png" alt="">
-          <h3>小红</h3>
-          <p>xxxxxxxxxxxx</p>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="box">
-          <img src="${pageContext.request.contextPath}/images/pic4.png" alt="">
-          <h3>小黄</h3>
-          <p>xxxxxxxxxxxxx</p>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 <!-- 联系我们 -->
 <section class="contact" id="contact">
 
@@ -481,22 +405,6 @@
       <input type="submit" class="btn" value="发送给我们">
     </form>
 
-  </div>
-
-</section>
-
-<!-- 品牌赞助 -->
-<section class="brand-container">
-
-  <div class="swiper-container brand-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/1.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/2.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/3.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/4.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/5.jpg" alt=""></div>
-      <div class="swiper-slide"><img src="${pageContext.request.contextPath}/images/6.jpg" alt=""></div>
-    </div>
   </div>
 
 </section>

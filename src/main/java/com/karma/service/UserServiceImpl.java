@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService{
         return userMapper.registerCheck(username)==0;
     }
 
+    @Override
+    public boolean login(User user) {
+        User user1 = userMapper.doLogin(user);
+        return(user.getPassword().equals(user1.getPassword()));
+    }
+
 }

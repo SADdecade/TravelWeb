@@ -10,6 +10,7 @@
 
     <mappers>
         <mapper class="com.karma.dao.UserMapper"/>
+        <mapper class="com.karma.dao.SceneMapper"/>
     </mappers>
 
 </configuration>

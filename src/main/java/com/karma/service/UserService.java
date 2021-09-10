@@ -19,4 +19,11 @@ public interface UserService {
      */
     boolean registerCheck(String username);
 
+    /**
+     * 登录验证
+     * @param user
+     * @return
+     */
+    boolean login(User user);
+
 }

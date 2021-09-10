@@ -1,6 +1,7 @@
 let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 let formBtn = document.querySelector('#login-btn');
+let registerBtn = document.querySelector('#register-btn')
 let loginForm = document.querySelector('.login-form-container');
 let formClose = document.querySelector('#form-close');
 let menu = document.querySelector('#menu-bar');
@@ -28,6 +29,10 @@ formClose.addEventListener('click', () =>{
     loginForm.classList.remove('active');
 });
 
+registerBtn.addEventListener('click',() =>{
+    loginForm.classList.remove('active');
+})
+
 videoBtn.forEach(btn =>{
     btn.addEventListener('click', ()=>{
         document.querySelector('.controls .active').classList.remove('active');
@@ -36,50 +41,6 @@ videoBtn.forEach(btn =>{
         document.querySelector('#video-slider').src = src;
     });
 });
-
-var swiper1 = new Swiper(".review-slider", {
-    spaceBetween: 10,
-    loop:true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        640: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-    },
-});
-
-var swiper2 = new Swiper(".brand-slider", {
-    spaceBetween: 20,
-    loop:true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        450: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        991: {
-          slidesPerView: 4,
-        },
-        1200: {
-          slidesPerView: 5,
-        },
-      },
-});
-
 
 menu.addEventListener('click', () =>{
   menu.classList.toggle('fa-times');
