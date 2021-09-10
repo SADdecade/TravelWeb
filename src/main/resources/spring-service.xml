@@ -27,6 +27,9 @@
     <bean id="ManagerLogServiceImpl" class="com.karma.service.ManagerLogServiceImpl">
         <property name="managerLogMapper" ref="managerLogMapper"/>
     </bean>
+    <bean id="SceneCommentServiceImpl" class="com.karma.service.SceneCommentServiceImpl">
+        <property name="sceneCommentsMapper" ref="sceneCommentsMapper"/>
+    </bean>
 
 
     <!-- 配置事务管理器 -->

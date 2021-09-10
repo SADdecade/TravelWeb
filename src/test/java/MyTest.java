@@ -1,12 +1,10 @@
-import com.karma.pojo.City;
-import com.karma.pojo.ManagerLog;
-import com.karma.pojo.SceneBook;
-import com.karma.pojo.User;
+import com.karma.pojo.*;
 import com.karma.service.*;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 public class MyTest {
 
@@ -83,6 +81,31 @@ public class MyTest {
 
     }
 
+    @Test
+    public void TestSceneComment(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        SceneCommentService sceneCommentService = (SceneCommentService) context.getBean("SceneCommentServiceImpl");
+        //add
+//        SceneComment sceneComment = new SceneComment();
+//        sceneComment.setSceneid(2);
+//        sceneComment.setUserid(2233);
+//        sceneComment.setMainbody("这个地方很好玩");
+//        sceneComment.setPicaddress("XXXXXX");
+//        sceneCommentService.addSceneComment(sceneComment);
+
+        //queryBySceneId
+//        List<SceneComment> sceneComments = sceneCommentService.queryBySceneId(3);
+//        for (SceneComment sceneComment : sceneComments) {
+//            System.out.println(sceneComment);
+//        }
+
+        List<SceneComment> sceneComments2 = sceneCommentService.queryByUserId(11);
+        for (SceneComment sceneComment : sceneComments2) {
+            System.out.println(sceneComment);
+        }
+
+
+    }
 
 
 }

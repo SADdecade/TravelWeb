@@ -15,6 +15,7 @@
         <mapper class="com.karma.dao.CityMapper"/>
         <mapper class="com.karma.dao.SceneBookMapper"/>
         <mapper class="com.karma.dao.ManagerLogMapper"/>
+        <mapper class="com.karma.dao.SceneCommentsMapper"/>
     </mappers>
 
 </configuration>
