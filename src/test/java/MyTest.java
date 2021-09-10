@@ -10,9 +10,9 @@ public class MyTest {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userServiceImpl = (UserService)context.getBean("UserServiceImpl");
         User user=new User();
-        user.setUsername("Test");
-        user.setPassword("Test");
-        System.out.println(userServiceImpl.registerCheck("Test"));
+        user.setUsername("18390844082");
+        user.setPassword("000113");
+        System.out.println(userServiceImpl.login(user));
     }
 
 }

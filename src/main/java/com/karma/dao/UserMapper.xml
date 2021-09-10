@@ -19,8 +19,8 @@
         where id=#{id}
     </update>
 
-    <select id="doLogin" resultType="com.karma.pojo.User">
-        select * from travelweb.users where username = #{username} and password = #{password}
+    <select id="doLogin" parameterType="com.karma.pojo.User" resultType="com.karma.pojo.User">
+        select * from travelweb.users where username = #{username}
     </select>
 
     <select id="registerCheck" resultType="_int">

@@ -38,6 +38,7 @@
         <a href="#packages">景点</a>
         <a href="#gallery">游记</a>
         <a href="#contact">联系我们</a>
+        <a href="${pageContext.request.contextPath}/User/admin">个人主页</a>
     </nav>
     <!-- 图标 -->
     <div class="icons">
@@ -55,8 +56,8 @@
     <i class="fas fa-times" id="form-close"></i>
     <form action="${pageContext.request.contextPath}/User/login" method="post">
         <h3>登录</h3>
-        <input type="text" class="box" placeholder="请输入用户名">
-        <input type="password" class="box" placeholder="请输入密码">
+        <input type="text" class="box" name="username" placeholder="请输入用户名" required>
+        <input type="password" class="box" name="password" placeholder="请输入密码" required>
         <input type="submit" value="登录" class="btn">
         <p>忘记密码? <a href="#">找回密码</a></p>
         <p>没有账户? <a href="#" id="register-btn">注册</a></p>

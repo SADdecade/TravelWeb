@@ -6,11 +6,10 @@ import com.karma.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 /**
  * controller
@@ -24,28 +23,27 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/addUser")
-    public String addUser(User user){
+    public String addUser(User user, HttpSession session){
         //检测用户名是否被使用
         if(userService.registerCheck(user.getUsername())) {
             //检测是否插入表成功
             if(userService.addUser(user)==1) {
-                return "success";
+                session.setAttribute("userLoginInfo",user.getUsername());
             }else{
-                return "login";
             }
         }else{
             //用户名被使用过，返回主页
-            return "login";
         }
+        return "main";
     }
 
     @RequestMapping("/login")
-    public String login(User user){
+    public String login(User user,HttpSession session){
+        System.out.println(user);
         if(userService.login(user)){
-            return "login";
-        }else{
-            return "login";
+            session.setAttribute("userLoginInfo",user.getUsername());
         }
+        return "main";
     }
 
 
@@ -61,5 +59,15 @@ public class UserController {
             }
         }
         return msg;
+    }
+
+    @RequestMapping("/tologin")
+    public String tologin(){
+        return "login";
+    }
+
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin";
     }
 }

@@ -26,6 +26,13 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.karma.config.UserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
     <!--扫描包-->
     <context:component-scan base-package="com.karma.controller"/>
     <!--视图解析器-->
