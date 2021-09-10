@@ -1,9 +1,11 @@
 let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 let formBtn = document.querySelector('#login-btn');
-let registerBtn = document.querySelector('#register-btn')
+let registerBtn = document.querySelector('#register-btn');
 let loginForm = document.querySelector('.login-form-container');
+let registerForm =document.querySelector('.register-form-container');
 let formClose = document.querySelector('#form-close');
+let registerClose=document.querySelector('#register-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
@@ -13,7 +15,8 @@ window.onscroll = () =>{
     searchBar.classList.remove('active');
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
-    loginForm.classList.remove('active');
+    loginForm.classList.remove('active')
+    registerForm.classList.remove('active');
 }
 
 searchBtn.addEventListener('click', () =>{
@@ -31,6 +34,11 @@ formClose.addEventListener('click', () =>{
 
 registerBtn.addEventListener('click',() =>{
     loginForm.classList.remove('active');
+    registerForm.classList.add('active');
+})
+
+registerClose.addEventListener('click',() =>{
+    registerForm.classList.remove('active');
 })
 
 videoBtn.forEach(btn =>{

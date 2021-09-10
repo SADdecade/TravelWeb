@@ -200,7 +200,7 @@
       }
       /* 注册 */
 
-.login-form-container{
+.register-form-container{
   position: fixed;
   top:-120%; left: 0;
   z-index: 10000;
@@ -212,11 +212,11 @@
   justify-content: center;
 }
 
-.login-form-container.active{
+.register-form-container.active{
   top:0;
 }
 
-.login-form-container form{
+.register-form-container form{
   margin:2rem;
   padding:1.5rem 2rem;
   border-radius: .5rem;
@@ -224,7 +224,7 @@
   width:30rem;
 }
 
-.login-form-container form h3{
+.register-form-container form h3{
   font-size: 2rem;
   color:#444;
   text-transform: uppercase;
@@ -232,7 +232,7 @@
   padding:1rem 0;
 }
 
-.login-form-container form .box{
+.register-form-container form .box{
   width:100%;
   padding:1rem;
   font-size: 1.5rem;
@@ -242,61 +242,48 @@
   text-transform: none;
 }
 
-.login-form-container form .box:focus{
+.register-form-container form .box:focus{
   border-color: #ffa500;
 }
 
-.login-form-container form #remember{
+.register-form-container form #remember{
   margin-top: 1.5rem;
 }
 
-.login-form-container form label{
+.register-form-container form label{
   font-size: 1.5rem;
 }
 
-.login-form-container form .btn{
+.register-form-container form span{
+    font-size: 0.5rem;
+}
+
+.register-form-container form .btn{
   display: block;
   width:100%;
 }
 
-.login-form-container form p{
+.register-form-container form p{
   padding:.5rem 0;
   font-size: 1.0rem;
   color:#666;
 }
 
-.login-form-container form p a{
+.register-form-container form p a{
   color:#ffa500;
 }
 
-.login-form-container form p a:hover{
+.register-form-container form p a:hover{
   color:#333;
   text-decoration: underline;
 }
 
-.login-form-container #form-close{
+.register-form-container #register-close{
   position: absolute;
   top:2rem; right:3rem;
   font-size: 4rem;
   color:#fff;
   cursor: pointer;
-}
-
-.btn{
-  display: inline-block;
-  margin-top: 0rem;
-  background: #ffa500;
-  color: #f7f7f7;
-  padding: .8rem 3rem;
-  border: .2rem solid #ffa500;
-  cursor: pointer;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-.btn:hover{
-  background:rgba(255, 165, 0,.2);
-  color:#ffa500;
 }
 
       /* 主页的视频播放区 */

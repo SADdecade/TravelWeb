@@ -48,22 +48,16 @@ public class UserController {
         }
     }
 
+
     @ResponseBody
     @RequestMapping("/test")
-    public String test(String name,String pwd) {
+    public String test(String name) {
         String msg="";
         if(name!=null){
-            if(name.equals("admin")){
-                return "OK";
+            if(userService.registerCheck(name)){
+                msg="该用户名可用";
             }else{
-                return "用户名有误";
-            }
-        }
-        if(pwd!=null){
-            if(pwd.equals("123456")){
-                return "OK";
-            }else{
-                return "密码有误";
+                msg="该用户名已被使用";
             }
         }
         return msg;
