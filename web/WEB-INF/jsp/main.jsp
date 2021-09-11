@@ -35,7 +35,7 @@
   <nav class="navbar">
     <a href="#home">首页</a>
     <a href="#book">预定</a>
-    <a href="#packages">景点</a>
+    <a href="${pageContext.request.contextPath}/Scene/queryall">景点</a>
     <a href="#gallery">游记</a>
     <a href="#contact">联系我们</a>
     <a href="${pageContext.request.contextPath}/User/admin">个人主页</a>
