@@ -19,4 +19,7 @@ public interface TravelNoteMapper {
 
     int deleteTravelNote(@Param("id") int id);
 
+    //模糊查询
+    List<TravelNote> queryByTitle(@Param("title") String title);
+
 }

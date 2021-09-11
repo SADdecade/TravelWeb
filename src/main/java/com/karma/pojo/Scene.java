@@ -5,8 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.Date;
-
 /**
  * @author 俞培鑫
  */
@@ -25,6 +23,11 @@ public class Scene {
      * 城市ID
      */
     private Integer cityid;
+
+    /**
+     * 景区名
+     */
+    private String address;
 
     /**
      * 景区名

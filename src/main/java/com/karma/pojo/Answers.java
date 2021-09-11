@@ -15,7 +15,6 @@ public class Answers {
     private int questid;
     private int userid;
     private String text;
-    private int status;
 
 
 }

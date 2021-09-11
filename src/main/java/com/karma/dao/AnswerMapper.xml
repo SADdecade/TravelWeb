@@ -6,8 +6,8 @@
 
 
     <insert id="addAnswer" parameterType="com.karma.pojo.Answers">
-        insert into travelweb.answers(questid, userid, text, status)
-        values (#{questid},#{userid},#{text},#{status})
+        insert into travelweb.answers(questid, userid, text)
+        values (#{questid},#{userid},#{text})
     </insert>
 
     <delete id="deleteAnswer" parameterType="_int">
