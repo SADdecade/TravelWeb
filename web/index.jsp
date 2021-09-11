@@ -145,46 +145,38 @@
         <span>推</span>
         <span>荐</span>
         <span>景</span>
-        <span>区</span>
+        <span>点</span>
     </h1>
 
     <div class="box-container">
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/p-1.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/changsha/juzizhou.jpg" alt="">
             <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> 长沙 </h3>
-                <p>xxx</p>
+                <h3> <i class="fas fa-map-marker-alt"></i> 橘子洲 </h3>
+                <p>湘江名洲，由南至北，纵贯江心，西瞻岳麓，东临古城</p>
                 <a href="${pageContext.request.contextPath}/travelnote/travelnoteByCity" class="btn">游记详情</a>
             </div>
         </div>
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/p-2.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/beijing/tiantan.jpg" alt="">
             <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> 上海 </h3>
-                <p>这里有你梦想中的迪士尼。</p>
+                <h3> <i class="fas fa-map-marker-alt"></i> 天坛 </h3>
+                <p>皇帝祭天、求雨和祈祷丰年的专用祭坛。</p>
                 <a href="#" class="btn">详情</a>
             </div>
         </div>
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/p-3.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/shanghai/waitan.jpg" alt="">
             <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> 广州 </h3>
-                <p>中国独树一帜的海阔天空之城。</p>
+                <h3> <i class="fas fa-map-marker-alt"></i> 外滩 </h3>
+                <p>风格迥异的万国建筑群和浦江夜景。</p>
                 <a href="#" class="btn">详情</a>
             </div>
         </div>
 
-        <div class="box">
-            <img src="${pageContext.request.contextPath}/images/p-4.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> 深圳 </h3>
-                <p>创业者的城市。</p>
-                <a href="#" class="btn">详情</a>
-            </div>
-        </div>
     </div>
 </section>
 <!-- 相册部分 -->
