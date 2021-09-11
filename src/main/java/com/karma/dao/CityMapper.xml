@@ -10,4 +10,10 @@
         values (#{id},#{name})
     </insert>
 
+    <select id="queryAllCity" resultType="com.karma.pojo.City">
+        select * from travelweb.cities
+    </select>
+
+
+
 </mapper>

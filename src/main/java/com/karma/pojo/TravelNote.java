@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +23,7 @@ public class TravelNote {
     private String withwho;
     private String mainbody;
     private String picaddress;
+    private Date time;
     private int status;
 
 }

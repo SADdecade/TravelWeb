@@ -43,9 +43,14 @@ public class MyTest {
     public void TestCity(){
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         CityService cityservice = (CityService) context.getBean("CityServiceImpl");
-        City city = new City();
-        city.setName("成都");
-        cityservice.addCity(city);
+//        City city = new City();
+//        city.setName("成都");
+//        cityservice.addCity(city);
+
+        //select all
+        for(City city : cityservice.queryAllCity()){
+            System.out.println(city);
+        }
 
     }
 
@@ -162,7 +167,7 @@ public class MyTest {
     }
 
     @Test
-    public void TestTravleNote(){
+    public void TestTravelNote(){
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         TravelNoteService travelNoteService = (TravelNoteService) context.getBean("TravelNoteServiceImpl");
@@ -181,23 +186,28 @@ public class MyTest {
 //        travelNoteService.addTravelNote(travelNote);
 
         //queryById
-        System.out.println("querybyid=1"+ travelNoteService.queryById(1));
-
-        //queryByuserid
-        for(TravelNote travelNote: travelNoteService.queryByUserId(123456)){
-            System.out.println("querybyuserid=123456"+travelNote);
-        }
-
-        //queryByCityId
-        for(TravelNote travelNote: travelNoteService.queryByCityId(2)){
-            System.out.println("querybycity=2"+travelNote);
-        }
-
+//        System.out.println("querybyid=1"+ travelNoteService.queryById(1));
+//
+//        //queryByuserid
+//        for(TravelNote travelNote: travelNoteService.queryByUserId(123456)){
+//            System.out.println("querybyuserid=123456"+travelNote);
+//        }
+//
+//        //queryByCityId
+//        for(TravelNote travelNote: travelNoteService.queryByCityId(2)){
+//            System.out.println("querybycity=2"+travelNote);
+//        }
+//
         //update
-        travelNoteService.updateStatus(1,1);
+//        travelNoteService.updateStatus(1,1);
+//
+//        //delete
+//        travelNoteService.deleteTravelNote(4);
 
-        //delete
-        travelNoteService.deleteTravelNote(4);
+        //selectByTitle
+        for(TravelNote travelNote: travelNoteService.queryByTitle("长沙")){
+            System.out.println("querybytitle=changsha"+travelNote);
+        }
 
     }
 

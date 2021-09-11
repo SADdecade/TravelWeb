@@ -17,4 +17,6 @@ public interface TravelNoteService {
     int updateStatus(int id,int status);
 
     int deleteTravelNote(int id);
+
+    List<TravelNote> queryByTitle(String title);
 }

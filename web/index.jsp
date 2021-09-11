@@ -143,12 +143,10 @@
 <section class="packages" id="packages">
 
     <h1 class="heading">
-        <span>S</span>
-        <span>E</span>
-        <span>N</span>
-        <span>C</span>
-        <span>E</span>
-        <span>S</span>
+        <span>推</span>
+        <span>荐</span>
+        <span>景</span>
+        <span>区</span>
     </h1>
 
     <div class="box-container">
@@ -156,9 +154,9 @@
         <div class="box">
             <img src="${pageContext.request.contextPath}/images/p-1.jpg" alt="">
             <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> 成都 </h3>
-                <p>和我在成都的街头走一走。</p>
-                <a href="#" class="btn">详情</a>
+                <h3> <i class="fas fa-map-marker-alt"></i> 长沙 </h3>
+                <p>xxx</p>
+                <a href="${pageContext.request.contextPath}/travelnote/travelnoteByCity" class="btn">游记详情</a>
             </div>
         </div>
 
@@ -195,45 +193,36 @@
 <section class="gallery" id="gallery">
 
     <h1 class="heading">
-        <span>N</span>
-        <span>O</span>
-        <span>T</span>
-        <span>E</span>
-        <span>S</span>
+        <span>推</span>
+        <span>荐</span>
+        <span>游</span>
+        <span>记</span>
     </h1>
 
     <div class="box-container">
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/g-1.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/travelnote/travelnote1.jpg" alt="">
             <div class="content">
-                <h3>美丽景色</h3>
-                <p>这是你梦中向往的地方</p>
-                <a href="#" class="btn">查看 更多</a>
+                <h3><small>岳麓山下几月天</small></h3>
+                <p>长沙</p>
+                <a href="${pageContext.request.contextPath}/travelnote/travelnoteById?id=3" class="btn2">查看</a>
             </div>
         </div>
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/g-2.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/travelnote/travelnotebeijing1.jpg" alt="">
             <div class="content">
-                <h3>美丽景色</h3>
-                <p>这是你梦中向往的地方</p>
-                <a href="#" class="btn">查看 更多</a>
+                <h3><small>北京，迷失的塞外古城池</small></h3>
+                <p>北京</p>
+                <a href="${pageContext.request.contextPath}/travelnote/travelnoteById?id=4" class="btn2">查看</a>
             </div>
         </div>
         <div class="box">
-            <img src="${pageContext.request.contextPath}/images/g-3.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/travelnote/travelnotebeijing2.jpg" alt="">
             <div class="content">
-                <h3>美丽景色</h3>
-                <p>这是你梦中向往的地方</p>
-                <a href="#" class="btn">查看 更多</a>
-            </div>
-        </div>
-        <div class="box">
-            <img src="${pageContext.request.contextPath}/images/g-4.jpg" alt="">
-            <div class="content">
-                <h3>美丽景色</h3>
-                <p>这是你梦中向往的地方</p>
-                <a href="#" class="btn">查看 更多</a>
+                <h3><small>北京周边自驾集锦之夏</small></h3>
+                <p>北京</p>
+                <a href="${pageContext.request.contextPath}/travelnote/travelnoteById?id=5" class="btn2">查看 更多</a>
             </div>
         </div>
     </div>

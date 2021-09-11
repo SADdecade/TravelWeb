@@ -42,4 +42,10 @@ public class TravelNoteServiceImpl implements TravelNoteService {
     public int deleteTravelNote(int id) {
         return travelNoteMapper.deleteTravelNote(id);
     }
+
+    @Override
+    public List<TravelNote> queryByTitle(String title) {
+        return travelNoteMapper.queryByTitle(title);
+    }
+
 }

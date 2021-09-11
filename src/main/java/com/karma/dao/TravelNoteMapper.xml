@@ -31,6 +31,9 @@
         delete from travelweb.travel_notes where id = #{id}
     </delete>
 
+    <select id="queryByTitle" resultType="com.karma.pojo.TravelNote">
+        select * from travelweb.travel_notes where title like concat('%',#{title},'%')
+    </select>
 
 
 </mapper>
