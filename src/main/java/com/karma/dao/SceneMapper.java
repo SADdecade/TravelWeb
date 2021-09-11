@@ -10,11 +10,9 @@ public interface SceneMapper {
 
     List<Scene> getAllScene(Map map);
 
-    Scene getSceneById();
+    int deleteSceneById(@Param("id") int id);
 
-    int deleteSceneById();
+    int addScene(Scene scene);
 
-    int addScene();
-
-    int updateScenebyid(@Param("id") int id);
+    int updateScene(Scene scene);
 }

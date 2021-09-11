@@ -15,6 +15,12 @@
     <bean id="UserServiceImpl" class="com.karma.service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"/>
     </bean>
+    <bean id="SceneServiceImpl" class="com.karma.service.SceneServiceImpl">
+        <property name="sceneMapper" ref="sceneMapper"/>
+    </bean>
+    <bean id="ManagerServiceImpl" class="com.karma.service.ManagerServiceImpl">
+        <property name="managerMapper" ref="managerMapper"/>
+    </bean>
     <bean id="AnswerServiceImpl" class="com.karma.service.AnswerServiceImpl">
         <property name="answerMapper" ref="answerMapper"/>
     </bean>

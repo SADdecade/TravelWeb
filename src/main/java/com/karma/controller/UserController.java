@@ -44,7 +44,6 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login(User user,HttpSession session){
-        System.out.println(user);
         if(userService.login(user)){
             session.setAttribute("userLoginInfo",user.getUsername());
         }

@@ -9,7 +9,6 @@
     <mvc:annotation-driven/>
     <!--静态资源过滤-->
     <mvc:default-servlet-handler/>
-
     <!--JSON防止乱码-->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">

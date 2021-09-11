@@ -34,6 +34,9 @@ public class Scene {
      */
     private String scenename;
 
+
+
+    private int price;
     /**
      * 介绍
      */

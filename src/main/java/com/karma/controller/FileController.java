@@ -20,12 +20,14 @@ public class FileController {
 
         //如果文件名为空，直接回到首页！
         if ("".equals(uploadFileName)){
-            return "redirect:/index.jsp";
+            return "redirect:/User/goMain";
         }
         System.out.println("上传文件名 : "+uploadFileName);
 
         //上传路径保存设置
         String path = request.getSession().getServletContext().getRealPath("/upload");
+
+
         //如果路径不存在，创建一个
         File realPath = new File(path);
         if (!realPath.exists()){
