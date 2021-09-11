@@ -9,9 +9,8 @@
 <body>
 <!-- 登录表单 -->
 <div class="login-form-container">
-    <i class="fas fa-times" id="form-close"></i>
     <form action="${pageContext.request.contextPath}/User/login" method="post">
-        <h3>登录</h3>
+        <h3>您未登录 请先登录</h3>
         <input type="text" class="box" name="username" placeholder="请输入用户名" required>
         <input type="password" class="box" name="password" placeholder="请输入密码" required>
         <input type="submit" value="登录" class="btn">
@@ -31,8 +30,25 @@
     </form>
 </div>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/register.js"></script>
 <script src="${pageContext.request.contextPath}/js/login.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery-3.6.0.js"></script>
+<script>
+    function check(){
+        $.post({
+            url:"${pageContext.request.contextPath}/User/test",
+            data:{"name":$("#registername").val()},
+            success:function (data){
+                if(data.toString()==="该用户名已被使用"){
+                    $("#userNameInfo").css("color","red");
+                    $("#register-btn").disabled = true;
+                }else{
+                    $("#userNameInfo").css("color","green");
+                    $("#register-btn").disabled = false;
+                }
+                $("#userNameInfo").html(data);
+            }
+        })
+    }
+</script>
 </body>
 </html>

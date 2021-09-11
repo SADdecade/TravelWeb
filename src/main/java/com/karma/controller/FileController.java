@@ -45,6 +45,12 @@ public class FileController {
         }
         os.close();
         is.close();
-        return "redirect:/test.jsp";
+        return "redirect:/gofiletest";
     }
+
+    @RequestMapping("/gofiletest")
+    public String gotest(){
+        return "test";
+    }
+
 }

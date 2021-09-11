@@ -39,6 +39,7 @@
     <a href="#gallery">游记</a>
     <a href="#contact">联系我们</a>
     <a href="${pageContext.request.contextPath}/User/admin">个人主页</a>
+    <a href="${pageContext.request.contextPath}/gofiletest">测试页面</a>
   </nav>
   <!-- 图标 -->
   <div class="icons">

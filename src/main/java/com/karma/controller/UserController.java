@@ -22,6 +22,11 @@ public class UserController {
     @Qualifier("UserServiceImpl")
     private UserService userService;
 
+    @RequestMapping("/goMain")
+    public String gomain(){
+        return "main";
+    }
+
     @RequestMapping("/addUser")
     public String addUser(User user, HttpSession session){
         //检测用户名是否被使用
@@ -34,7 +39,7 @@ public class UserController {
         }else{
             //用户名被使用过，返回主页
         }
-        return "main";
+        return "redirect:/User/goMain";
     }
 
     @RequestMapping("/login")
@@ -43,7 +48,7 @@ public class UserController {
         if(userService.login(user)){
             session.setAttribute("userLoginInfo",user.getUsername());
         }
-        return "main";
+        return "redirect:/User/goMain";
     }
 
 
