@@ -12,7 +12,6 @@ public class UserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler)throws Exception {
         HttpSession session = req.getSession();
-        System.out.println(session.getAttribute("userLoginInfo")==null);
         if((req.getRequestURI().contains("admin")||req.getRequestURI().contains("addCommend")||req.getRequestURI().contains("addTripNote")||req.getRequestURI().contains("addSceneBook"))&&session.getAttribute("userLoginInfo")==null){
             req.getRequestDispatcher("tologin").forward(req,res);
             return false;

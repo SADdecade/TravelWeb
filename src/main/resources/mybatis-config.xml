@@ -11,6 +11,7 @@
     <mappers>
         <mapper class="com.karma.dao.UserMapper"/>
         <mapper class="com.karma.dao.SceneMapper"/>
+        <mapper class="com.karma.dao.ManagerMapper"/>
         <mapper class="com.karma.dao.AnswerMapper"/>
         <mapper class="com.karma.dao.CityMapper"/>
         <mapper class="com.karma.dao.SceneBookMapper"/>
