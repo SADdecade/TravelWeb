@@ -35,7 +35,6 @@ public class Scene {
     private String scenename;
 
 
-    private String address;
 
     private int price;
     /**
