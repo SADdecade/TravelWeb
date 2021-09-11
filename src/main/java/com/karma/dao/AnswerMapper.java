@@ -9,7 +9,7 @@ public interface AnswerMapper {
 
     int addAnswer(Answers answer);
 
-    //删除问题
+    //删除回答
     int deleteAnswer(@Param("answerId") int id);
 
     //修改问题状态

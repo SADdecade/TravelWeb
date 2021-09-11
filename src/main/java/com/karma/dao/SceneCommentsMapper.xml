@@ -9,11 +9,11 @@
         values (#{sceneid},#{userid},#{mainbody},#{picaddress})
     </insert>
 
-    <select id="queryBySceneId" resultType="_int">
+    <select id="queryBySceneId" resultType="com.karma.pojo.SceneComment">
         select * from travelweb.scene_comments where sceneid = #{sceneid}
     </select>
 
-    <select id="queryByUserId" resultType="_int">
+    <select id="queryByUserId" resultType="com.karma.pojo.SceneComment">
         select * from travelweb.scene_comments where userid = #{userid}
     </select>
 
