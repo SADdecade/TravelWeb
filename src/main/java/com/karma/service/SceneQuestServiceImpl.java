@@ -37,4 +37,9 @@ public class SceneQuestServiceImpl implements SceneQuestService {
     public int updateStatus(int id, int status) {
         return sceneQuestMapper.updateStatus(id, status);
     }
+
+    @Override
+    public SceneQuest queryById(int id) {
+        return sceneQuestMapper.queryById(id);
+    }
 }

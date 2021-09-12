@@ -19,4 +19,6 @@ public interface SceneQuestMapper {
     //修改问题状态
     int updateStatus(@Param("questid") int id, @Param("status") int status);
 
+    SceneQuest queryById(@Param("id") int id);
+
 }

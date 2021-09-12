@@ -17,7 +17,7 @@ public class SceneBook {
     private int sceneid;
     private int userid;
     private Date playdate;
-    private int number;
+    private int num;
     private Date bookdate;
 
 }

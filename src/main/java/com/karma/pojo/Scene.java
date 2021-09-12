@@ -61,7 +61,7 @@ public class Scene {
     /**
      * 服务
      */
-    private String service;
+    private String services;
 
     /**
      * 图片地址

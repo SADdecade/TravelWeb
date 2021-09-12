@@ -17,4 +17,6 @@ public interface SceneQuestService {
     //修改问题状态
     int updateStatus(int id, int status);
 
+    SceneQuest queryById(int id);
+
 }

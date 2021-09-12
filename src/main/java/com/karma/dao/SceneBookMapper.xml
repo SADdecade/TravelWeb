@@ -5,9 +5,13 @@
 <mapper namespace="com.karma.dao.SceneBookMapper">
 
 
-    <insert id="addBook" parameterType="com.karma.pojo.SceneBook">
+    <insert id="addSceneBook" parameterType="com.karma.pojo.SceneBook">
         insert into travelweb.scenes_book(sceneid, userid, playdate, num)
         values (#{sceneid}, #{userid}, #{playdate}, #{num})
     </insert>
+
+    <select id="queryByUserId" resultType="com.karma.pojo.SceneBook">
+        select * from travelweb.scenes_book where userid = #{userid}
+    </select>
 
 </mapper>

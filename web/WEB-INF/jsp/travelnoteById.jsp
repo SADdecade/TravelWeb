@@ -14,7 +14,7 @@
 
         img{
 
-            width:1000px;
+            width:800px;
             height:300px;
             margin: 0 auto;
             vertical-align:middle;

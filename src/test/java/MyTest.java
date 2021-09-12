@@ -135,8 +135,11 @@ public class MyTest {
 //        }
 
         //删除，修改status
-        sceneQuestService.deleteSceneQuest(3);
-        sceneQuestService.updateStatus(1,2);
+//        sceneQuestService.deleteSceneQuest(3);
+//        sceneQuestService.updateStatus(1,2);
+
+        //questById
+        System.out.println(sceneQuestService.queryById(1));
 
     }
 
@@ -236,6 +239,21 @@ public class MyTest {
         Manager manager = new Manager(1, "18390844082", "00113");
 
         System.out.println(managerService.login(manager));
+    }
+
+    @Test
+    public void SceneBookTest(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        SceneBookService sceneBookService = (SceneBookService) context.getBean("SceneBookServiceImpl");
+
+        //add
+        SceneBook sceneBook = new SceneBook();
+        sceneBook.setSceneid(1);
+        sceneBook.setUserid(124);
+        sceneBook.setNum(4);
+
+        sceneBookService.addSceneBook(sceneBook);
+
     }
 
 }

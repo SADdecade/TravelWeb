@@ -3,6 +3,8 @@ package com.karma.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.karma.pojo.Scene;
+import com.karma.pojo.SceneQuest;
+import com.karma.service.SceneQuestService;
 import com.karma.service.SceneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,4 +39,33 @@ public class SceneController {
 
         return "SceneAll";
     }
+
+    @Autowired
+    @Qualifier("SceneQuestServiceImpl")
+    private SceneQuestService sceneQuestService;
+
+    //根据id查询问题
+    @RequestMapping("/sceneById")
+    public String queryById(int id, Model model ){
+
+        HashMap map = new HashMap();
+
+        if (id > 0){
+            map.put("id",id);
+        }
+        List<Scene> scenes = sceneService.querySceneByMap(map);
+
+        Scene scene = new Scene();
+        for (Scene scene1 : scenes) {
+            scene=scene1;
+        }
+
+        model.addAttribute("scene",scene);
+
+        List<SceneQuest> sceneQuests = sceneQuestService.queryBySceneId(id);
+        model.addAttribute("scenequests",sceneQuests);
+
+        return "sceneById";
+    }
+
 }
