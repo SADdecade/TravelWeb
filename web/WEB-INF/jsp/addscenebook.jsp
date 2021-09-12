@@ -45,11 +45,6 @@
             <input type="hidden" name="sceneid" value="${sceneid}">
 
             <div class="inputBox">
-                <h3>Userid</h3>
-                <input type="text" name="userid" placeholder="请输入id">
-            </div>
-
-            <div class="inputBox">
                 <h3>人数</h3>
                 <input type="text" name="num" placeholder="请输入人数">
             </div>
