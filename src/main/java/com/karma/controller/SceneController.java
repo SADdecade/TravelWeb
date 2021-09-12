@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 
@@ -79,5 +80,54 @@ public class SceneController {
 
         return "sceneById";
     }
+
+    //增加一条预定
+    @RequestMapping("/toaddscene")
+    public String toaddSceneBook(Model model){
+        return "addscene";
+    }
+
+    @RequestMapping("/addscene")
+    public String addSceneBook(Scene scene, HttpSession session){
+        sceneService.addScene(scene);
+        session.removeAttribute("msg");
+        session.setAttribute("msg","添加成功");
+        return "redirect:/Manager/scene";
+    }
+
+    @RequestMapping("/toupdatescene")
+    public String toupdateScene(int id,Model model){
+
+        HashMap map = new HashMap();
+        if (id > 0){
+            map.put("id",id);
+        }
+        List<Scene> scenes = sceneService.querySceneByMap(map);
+        Scene scene = new Scene();
+        for (Scene scene1 : scenes) {
+            scene=scene1;
+        }
+
+        model.addAttribute("scene",scene);
+        return "updatescene";
+    }
+
+    @RequestMapping("/updatescene")
+    public String updateScene(Scene scene,HttpSession session){
+        sceneService.updateScene(scene);
+        session.removeAttribute("msg");
+        session.setAttribute("msg","修改成功");
+        return "redirect:/Manager/scene";
+    }
+
+    @RequestMapping("/deletescene")
+    public String deleteScene(int id,HttpSession session){
+        sceneService.deleteSceneById(id);
+        session.removeAttribute("msg");
+        session.setAttribute("msg","删除成功");
+        return "redirect:/Manager/scene";
+    }
+
+
 
 }

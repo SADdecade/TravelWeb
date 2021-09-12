@@ -40,23 +40,7 @@
         </div>
     </div>
 
-    <div class="row">
-        <%--<form action="${pageContext.request.contextPath}/travelnote/queryAll" method="post" class="form-inline">--%>
-            <%--<input name="scenename" class="input-group" type="text">--%>
-            <%--<select name="cityid" class="form-select-button">--%>
-                <%--<option value="0" selected>全部</option>--%>
-                <%--<c:forEach items="${citylist}" var="city">--%>
-                    <%--<option value="${city.id}">${city.name}</option>--%>
-                <%--</c:forEach>--%>
-            <%--</select>--%>
-            <%--<button type="submit" class="btn btn-default btn-sm">--%>
-                <%--搜索--%>
-            <%--</button>--%>
-            <%--<br>--%>
-        <%--</form>--%>
 
-        <br>
-    </div>
     <!-- 显示表格数据 -->
     <div class="row">
         <div class="col-md-12">
