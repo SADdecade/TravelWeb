@@ -85,7 +85,7 @@
     </div>
 
     <div class="controls">
-        <span class="vid-btn active" data-src="${pageContext.request.contextPath}/images/vid-1.mp4"></span>
+        <span class="vid-btn active" data-src="${pageContext.request.contextPath}/images/labubu.mp4"></span>
         <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-2.mp4"></span>
         <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-3.mp4"></span>
         <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-4.mp4"></span>
@@ -93,7 +93,7 @@
     </div>
 
     <div class="video-container">
-        <video src="${pageContext.request.contextPath}/images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+        <video src="${pageContext.request.contextPath}/images/labubu.mp4" id="video-slider" loop autoplay muted></video>
     </div>
 
 </section>
