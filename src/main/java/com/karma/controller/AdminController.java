@@ -78,4 +78,8 @@ public class AdminController {
     }
 
 
+    @RequestMapping("/tologin")
+    public String tologin(){
+        return "login";
+    }
 }

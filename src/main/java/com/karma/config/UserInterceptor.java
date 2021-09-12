@@ -14,7 +14,7 @@ public class UserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler)throws Exception {
         HttpSession session = req.getSession();
-        List<String> admin = Arrays.asList("admin","addCommend","addTripNote","toaddscenebook" );
+        List<String> admin = Arrays.asList("admin","scenecommend","addTripNote","toaddscenebook" );
         boolean b = session.getAttribute("userLoginInfo")==null;
 
         for(String uri : admin){

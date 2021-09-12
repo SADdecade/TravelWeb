@@ -37,7 +37,7 @@
                     <th class="text-center">
                         <a class="btn btn-default" href="${pageContext.request.contextPath}/travelnote/travelnoteById?id=${travelnote.id}" role="button">详情</a>
                         &nbsp; | &nbsp;
-                        <a href="${pageContext.request.contextPath}/travelnote/deletetravelnote?id=${travelnote.id}">删除</a>
+                        <a class="btn btn-default" href="${pageContext.request.contextPath}/travelnote/deletetravelnote?id=${travelnote.id}" role="button">删除</a>
                     </th>
                 </tr>
             </c:forEach>

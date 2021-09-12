@@ -40,14 +40,9 @@
   <div id="menu-bar" class="fas fa-bars"></div>
   <a href="#" class="logo"><span>K</span>arma</a>
   <nav class="navbar">
-    <a href="#home">首页</a>
-    <a href="#book">预定</a>
     <a href="${pageContext.request.contextPath}/scene/queryall">景点</a>
     <a href="${pageContext.request.contextPath}/travelnote/queryAll">游记</a>
-    <a href="#contact">联系我们</a>
     <a href="${pageContext.request.contextPath}/User/admin">个人主页</a>
-    <a href="${pageContext.request.contextPath}/gofiletest">测试页面</a>
-    <a href="${pageContext.request.contextPath}/Manager/gologin">管理员登录</a>
   </nav>
   <!-- 图标 -->
   <div class="icons">

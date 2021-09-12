@@ -64,9 +64,11 @@
                         <th>${emp.address }</th>
                         <th>${emp.price }</th>
                         <th>
-                            <a href="${pageContext.request.contextPath}/scene/toupdatescene?id=${emp.id}">修改</a>
+                            <a class="btn btn-default" href="${pageContext.request.contextPath}/scene/sceneById?id=${emp.id}" role="button" target="_blank">详情</a>
                             &nbsp; | &nbsp;
-                            <a href="${pageContext.request.contextPath}/scene/deletescene?id=${emp.id}">删除</a>
+                            <a class="btn btn-default" href="${pageContext.request.contextPath}/scene/toupdatescene?id=${emp.id}" role="button">修改</a>
+                            &nbsp; | &nbsp;
+                            <a class="btn btn-default" href="${pageContext.request.contextPath}/scene/deletescene?id=${emp.id}" role="button">删除</a>
                         </th>
                     </tr>
                 </c:forEach>
