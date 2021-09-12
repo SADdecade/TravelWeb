@@ -31,9 +31,6 @@
 
 </head>
 <body>
-
-
-
 <img src="${pageContext.request.contextPath}/upload/scene/${scene.picaddress}" class="img-responsive" alt="Responsive image">
 
     <div class="container">
@@ -69,12 +66,14 @@
             </div>
         </div>
 
-        <h2><small>景点介绍</small></h2>
-        <p>${scene.intro}</p>
-        <h2><small>必看贴士</small></h2>
-        <p>${scene.tips}</p>
-        <h2><small>服务设施</small></h2>
-        <p>${scene.services}</p>
+        <div>
+            <h2><small>景点介绍</small></h2>
+            <p>${scene.intro}</p>
+            <h2><small>必看贴士</small></h2>
+            <p>${scene.tips}</p>
+            <h2><small>服务设施</small></h2>
+            <p>${scene.services}</p>
+        </div>
 
         <p class="text-center">
             <a class="btn btn-default" href="${pageContext.request.contextPath}/scenebook/toaddscenebook?sceneid=${scene.id}" role="button">预定景点</a>
@@ -117,10 +116,34 @@
                 </table>
             </div>
 
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center">id</th>
+                            <th class="text-center">详情</th>
+                            <th class="text-center">评论时间</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <c:forEach var="comment" items="${scenecomments}">
+                            <tr>
+                                <td>${comment.userid}</td>
+                                <td>${comment.mainbody}</td>
+                                <td>${comment.time}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         <p class="text-center">
             <a class="btn btn-default" href="${pageContext.request.contextPath}/User/goMain" role="button">返回主页</a>
         </p>
+
 
     </div>
     </div>

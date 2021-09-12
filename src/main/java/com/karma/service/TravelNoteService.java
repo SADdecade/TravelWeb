@@ -19,4 +19,7 @@ public interface TravelNoteService {
     int deleteTravelNote(int id);
 
     List<TravelNote> queryByTitle(String title);
+
+    List<TravelNote> queryAll();
+
 }

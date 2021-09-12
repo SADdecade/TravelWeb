@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: JQX
@@ -12,15 +13,17 @@
 
     <style type="text/css">
 
-        img{
-
-            width:800px;
-            height:300px;
-            margin: 0 auto;
-            vertical-align:middle;
-            border:0px solid ;
-            opacity: 0.75;
-
+        div::after {
+            content: "";
+            background: url(${pageContext.request.contextPath}/upload/travelnote/${travelNote.picaddress}) no-repeat;
+            background-size: cover;
+            opacity: 0.2;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
         }
 
 
@@ -31,7 +34,7 @@
 </head>
 <body>
 
-<img src="${pageContext.request.contextPath}/upload/travelnote/${travelNote.picaddress}" class="img-responsive" alt="Responsive image">
+<%--<img src="${pageContext.request.contextPath}/upload/travelnote/${travelNote.picaddress}" class="img-responsive" alt="Responsive image">--%>
 
 <div class="container">
     <div class="row clearfix">
@@ -61,7 +64,29 @@
     <p class="text-right">${travelNote.time}</p>
 
 
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th class="text-center">id</th>
+                    <th class="text-center">详情</th>
+                    <th class="text-center">评论时间</th>
+                </tr>
+                </thead>
 
+                <tbody>
+                <c:forEach var="travelcomment" items="${travelcomments}">
+                    <tr>
+                        <td>${travelcomment.userid}</td>
+                        <td>${travelcomment.mainbody}</td>
+                        <td>${travelcomment.time}</td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
 <p class="text-center">

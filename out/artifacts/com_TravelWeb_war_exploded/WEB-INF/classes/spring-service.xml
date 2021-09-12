@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描service层-->
+    <context:component-scan base-package="com.karma.service"/>
+
+    <!--将所有业务类注入到Spring-->
+    <!--ServiceImpl注入到IOC容器中-->
+    <bean id="UserServiceImpl" class="com.karma.service.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+    <bean id="SceneServiceImpl" class="com.karma.service.SceneServiceImpl">
+        <property name="sceneMapper" ref="sceneMapper"/>
+    </bean>
+    <bean id="ManagerServiceImpl" class="com.karma.service.ManagerServiceImpl">
+        <property name="managerMapper" ref="managerMapper"/>
+    </bean>
+    <bean id="AnswerServiceImpl" class="com.karma.service.AnswerServiceImpl">
+        <property name="answerMapper" ref="answerMapper"/>
+    </bean>
+    <bean id="CityServiceImpl" class="com.karma.service.CityServiceImpl">
+        <property name="cityMapper" ref="cityMapper"/>
+    </bean>
+    <bean id="SceneBookServiceImpl" class="com.karma.service.SceneBookServiceImpl">
+        <property name="sceneBookMapper" ref="sceneBookMapper"/>
+    </bean>
+    <bean id="ManagerLogServiceImpl" class="com.karma.service.ManagerLogServiceImpl">
+        <property name="managerLogMapper" ref="managerLogMapper"/>
+    </bean>
+    <bean id="SceneCommentServiceImpl" class="com.karma.service.SceneCommentServiceImpl">
+        <property name="sceneCommentsMapper" ref="sceneCommentsMapper"/>
+    </bean>
+    <bean id="SceneQuestServiceImpl" class="com.karma.service.SceneQuestServiceImpl">
+        <property name="sceneQuestMapper" ref="sceneQuestMapper"/>
+    </bean>
+    <bean id="TravelCommentServiceImpl" class="com.karma.service.TravelCommentServiceImpl">
+        <property name="travelCommentMapper" ref="travelCommentMapper"/>
+    </bean>
+    <bean id="TravelNoteServiceImpl" class="com.karma.service.TravelNoteServiceImpl">
+        <property name="travelNoteMapper" ref="travelNoteMapper"/>
+    </bean>
+
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--aop事务支持-->
+
+</beans>

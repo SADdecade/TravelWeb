@@ -3,7 +3,9 @@ package com.karma.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.karma.pojo.Scene;
+import com.karma.pojo.SceneComment;
 import com.karma.pojo.SceneQuest;
+import com.karma.service.SceneCommentService;
 import com.karma.service.SceneQuestService;
 import com.karma.service.SceneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +46,11 @@ public class SceneController {
     @Qualifier("SceneQuestServiceImpl")
     private SceneQuestService sceneQuestService;
 
-    //根据id查询问题
+    @Autowired
+    @Qualifier("SceneCommentServiceImpl")
+    private SceneCommentService sceneCommentService;
+
+    //根据id查询景区，相关问题和评论
     @RequestMapping("/sceneById")
     public String queryById(int id, Model model ){
 
@@ -62,8 +68,14 @@ public class SceneController {
 
         model.addAttribute("scene",scene);
 
+        //景点相关问题
         List<SceneQuest> sceneQuests = sceneQuestService.queryBySceneId(id);
         model.addAttribute("scenequests",sceneQuests);
+
+        //景点相关评论
+        List<SceneComment> sceneComments = sceneCommentService.queryBySceneId(id);
+        model.addAttribute("scenecomments",sceneComments);
+
 
         return "sceneById";
     }

@@ -48,4 +48,9 @@ public class TravelNoteServiceImpl implements TravelNoteService {
         return travelNoteMapper.queryByTitle(title);
     }
 
+    @Override
+    public List<TravelNote> queryAll() {
+        return travelNoteMapper.queryAll();
+    }
+
 }

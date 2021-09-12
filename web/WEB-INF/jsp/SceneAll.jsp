@@ -18,16 +18,27 @@
             rel="stylesheet">
     <script
             src="${APP_PATH }/js/jquery-3.6.0.js"></script>
+
+
 </head>
-<body>
+
+<body style="background:url(${pageContext.request.contextPath}/images/background.png);background-size:cover;">
+
+
+
 <!-- 搭建显示页面 -->
-<div class="container">
+<div class="container" >
     <!-- 标题 -->
-    <div class="row">
-        <div class="col-md-12">
-            <h1>景点查询</h1>
+    <div class="row clearfix">
+        <div class="co1-md-12 column">
+            <div class="page-header">
+                <h1>
+                    <h1>景点</h1>
+                </h1>
+            </div>
         </div>
     </div>
+
     <div class="row">
         <form action="${pageContext.request.contextPath}/scene/queryall" method="post" class="form-inline">
             <input name="scenename" class="input-group" type="text">
@@ -40,32 +51,36 @@
             <button type="submit" class="btn btn-default btn-sm">
                 搜索
             </button>
+            <br>
         </form>
+
+        <br>
     </div>
     <!-- 显示表格数据 -->
     <div class="row">
         <div class="col-md-12">
             <table class="table table-hover">
                 <tr>
-                    <th>#</th>
                     <th>景区名</th>
+                    <th>城市</th>
                     <th>地址</th>
-                    <th>城市ID</th>
                     <th>价格</th>
-                    <th>操作</th>
+                    <th class="text-center">操作</th>
                 </tr>
                 <c:forEach items="${pageInfo.list}" var="emp">
                     <tr>
-                        <th>${emp.id }</th>
-                        <th>${emp.scenename }</th>
-                        <th>${emp.cityid}</th>
+                        <th>${emp.scenename}</th>
+                        <th>
+                            <c:choose>
+                                <c:when test="${emp.cityid == 1 }">长沙</c:when>
+                                <c:when test="${emp.cityid == 2 }">北京</c:when>
+                                <c:when test="${emp.cityid == 3 }">上海</c:when>
+                            </c:choose>
+                        </th>
                         <th>${emp.address }</th>
                         <th>${emp.price }</th>
-                        <th>
-                            <button class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                详情
-                            </button>
+                        <th class="text-center">
+                            <a class="btn btn-default" href="${pageContext.request.contextPath}/scene/sceneById?id=${emp.id}" role="button">详情</a>
                         </th>
                     </tr>
                 </c:forEach>
@@ -109,6 +124,12 @@
             </nav>
         </div>
     </div>
+
+
+    <p class="text-center">
+        <a class="btn btn-default" href="${pageContext.request.contextPath}/User/goMain" role="button">返回主页</a>
+
+    </p>
 
 </div>
 </body>

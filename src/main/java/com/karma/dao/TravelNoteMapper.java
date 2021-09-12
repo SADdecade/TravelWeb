@@ -22,4 +22,6 @@ public interface TravelNoteMapper {
     //模糊查询
     List<TravelNote> queryByTitle(@Param("title") String title);
 
+    List<TravelNote> queryAll();
+
 }

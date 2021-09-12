@@ -17,7 +17,7 @@ public class SceneComment {
     private int sceneid;
     private int userid;
     private String mainbody;
-    private Date date;
+    private Date time;
     private String picaddress;
 
 
