@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @Controller
-@RequestMapping("/Scene")
+@RequestMapping("/scene")
 public class SceneController {
 
     @Autowired

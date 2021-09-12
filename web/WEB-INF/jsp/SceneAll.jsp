@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="row">
-        <form action="${pageContext.request.contextPath}/Scene/queryall" method="post" class="form-inline">
+        <form action="${pageContext.request.contextPath}/scene/queryall" method="post" class="form-inline">
             <input name="scenename" class="input-group" type="text">
             <select name="cityid" class="form-select-button">
                 <option value="0" selected>全部</option>
@@ -82,9 +82,9 @@
         <div class="col-md-6">
             <nav aria-label="Page navigation">
                 <ul class="pagination">
-                    <li><a href="${APP_PATH }/Scene/queryall?pn=1&scenename=${param.scenename}&cityid=${param.cityid}">首页</a></li>
+                    <li><a href="${APP_PATH }/scene/queryall?pn=1&scenename=${param.scenename}&cityid=${param.cityid}">首页</a></li>
                     <c:if test="${pageInfo.hasPreviousPage }">
-                        <li><a href="${APP_PATH }/Scene/queryall?pn=${pageInfo.pageNum-1}&scenename=${param.scenename}&cityid=${param.cityid}"
+                        <li><a href="${APP_PATH }/scene/queryall?pn=${pageInfo.pageNum-1}&scenename=${param.scenename}&cityid=${param.cityid}"
                                aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
                         </a></li>
                     </c:if>
@@ -95,16 +95,16 @@
                             <li class="active"><a href="#">${page_Num }</a></li>
                         </c:if>
                         <c:if test="${page_Num != pageInfo.pageNum }">
-                            <li><a href="${APP_PATH }/Scene/queryall?pn=${page_Num }&scenename=${param.scenename}&cityid=${param.cityid}">${page_Num }</a></li>
+                            <li><a href="${APP_PATH }/scene/queryall?pn=${page_Num }&scenename=${param.scenename}&cityid=${param.cityid}">${page_Num }</a></li>
                         </c:if>
 
                     </c:forEach>
                     <c:if test="${pageInfo.hasNextPage }">
-                        <li><a href="${APP_PATH }/Scene/queryall?pn=${pageInfo.pageNum+1 }&scenename=${param.scenename}&cityid=${param.cityid}"
+                        <li><a href="${APP_PATH }/scene/queryall?pn=${pageInfo.pageNum+1 }&scenename=${param.scenename}&cityid=${param.cityid}"
                                aria-label="Next"> <span aria-hidden="true">&raquo;</span>
                         </a></li>
                     </c:if>
-                    <li><a href="${APP_PATH }/Scene/queryall?pn=${pageInfo.pages}&scenename=${param.scenename}&cityid=${param.cityid}">末页</a></li>
+                    <li><a href="${APP_PATH }/scene/queryall?pn=${pageInfo.pages}&scenename=${param.scenename}&cityid=${param.cityid}">末页</a></li>
                 </ul>
             </nav>
         </div>
