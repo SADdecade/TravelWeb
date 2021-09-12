@@ -14,10 +14,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.*;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
+import java.util.regex.Pattern;
 
 @Controller
 @RequestMapping("/scene")
@@ -88,7 +96,40 @@ public class SceneController {
     }
 
     @RequestMapping("/addscene")
-    public String addSceneBook(Scene scene, HttpSession session){
+    public String addSceneBook(@RequestParam("file") CommonsMultipartFile file, Scene scene,  HttpSession session) throws IOException {
+
+        String uploadFileName = file.getOriginalFilename();
+
+        //如果文件名为空，直接回到首页！
+        if ("".equals(uploadFileName)){
+            session.setAttribute("msg","文件名为空！错误！");
+            return "redirect:/User/goMain";
+        }
+
+        //上传路径保存设置
+        String path = session.getServletContext().getRealPath("/upload/scene");
+
+
+        //如果路径不存在，创建一个
+        File realPath = new File(path);
+        if (!realPath.exists()){
+            realPath.mkdir();
+        }
+
+        InputStream is = file.getInputStream(); //文件输入流
+        OutputStream os = new FileOutputStream(new File(realPath,uploadFileName)); //文件输出流
+
+        //读取写出
+        int len=0;
+        byte[] buffer = new byte[1024];
+        while ((len=is.read(buffer))!=-1){
+            os.write(buffer,0,len);
+            os.flush();
+        }
+        os.close();
+        is.close();
+
+        scene.setPicaddress(uploadFileName);
         sceneService.addScene(scene);
         session.removeAttribute("msg");
         session.setAttribute("msg","添加成功");
@@ -113,7 +154,40 @@ public class SceneController {
     }
 
     @RequestMapping("/updatescene")
-    public String updateScene(Scene scene,HttpSession session){
+    public String updateScene(@RequestParam("file") CommonsMultipartFile file,Scene scene,HttpSession session) throws IOException {
+
+        String uploadFileName = file.getOriginalFilename();
+
+        //如果文件名为空，直接回到首页！
+        if ("".equals(uploadFileName)){
+            session.setAttribute("msg","文件名为空！错误！");
+            return "redirect:/User/goMain";
+        }
+
+        //上传路径保存设置
+        String path = session.getServletContext().getRealPath("/upload/scene");
+
+
+        //如果路径不存在，创建一个
+        File realPath = new File(path);
+        if (!realPath.exists()){
+            realPath.mkdir();
+        }
+
+        InputStream is = file.getInputStream(); //文件输入流
+        OutputStream os = new FileOutputStream(new File(realPath,uploadFileName)); //文件输出流
+
+        //读取写出
+        int len=0;
+        byte[] buffer = new byte[1024];
+        while ((len=is.read(buffer))!=-1){
+            os.write(buffer,0,len);
+            os.flush();
+        }
+        os.close();
+        is.close();
+
+        scene.setPicaddress(uploadFileName);
         sceneService.updateScene(scene);
         session.removeAttribute("msg");
         session.setAttribute("msg","修改成功");

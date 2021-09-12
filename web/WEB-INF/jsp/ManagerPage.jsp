@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="col-lg-11">
-            <iframe name="content" src="${pageContext.request.contextPath}/Manager/scene" height="100%" width="100%" scrolling="no" frameborder="0"></iframe>
+            <iframe name="content" src="${pageContext.request.contextPath}/Manager/scene" height="100%" width="100%" frameborder="0"></iframe>
         </div>
     </div>
 </div>

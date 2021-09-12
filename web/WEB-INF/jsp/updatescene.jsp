@@ -26,7 +26,7 @@
 
 
 
-    <form action="${pageContext.request.contextPath}/scene/updatescene" method="post">
+    <form action="${pageContext.request.contextPath}/scene/updatescene" enctype="multipart/form-data" method="post">
 
         <input type="hidden" name="id" value="${scene.id}">
 
@@ -65,6 +65,9 @@
         <div class="form-group">
             <label>设施服务</label>
             <input type="text" name="services" class="form-control" value="${scene.services}" required>
+        </div>
+        <div class="form-group">
+            <input type="file" name="file">
         </div>
         <div class="form-group">
             <input type="submit" class="form-control" value="修改">

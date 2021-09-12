@@ -26,7 +26,7 @@
 
 
 
-    <form action="${pageContext.request.contextPath}/scene/addscene" method="post">
+    <form action="${pageContext.request.contextPath}/scene/addscene" enctype="multipart/form-data" method="post">
         <div class="form-group">
             <label >城市id</label>
             <input type="text" name="cityid" class="form-control" required>
@@ -62,6 +62,9 @@
         <div class="form-group">
             <label>设施服务</label>
             <input type="text" name="services" class="form-control" required>
+        </div>
+        <div class="form-group">
+        <input type="file" name="file">
         </div>
         <div class="form-group">
             <input type="submit" class="form-control" value="添加">
