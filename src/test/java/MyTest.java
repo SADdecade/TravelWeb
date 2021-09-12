@@ -138,7 +138,7 @@ public class MyTest {
 //        sceneQuestService.updateStatus(1,2);
 
         //questById
-        System.out.println(sceneQuestService.queryById(1));
+        System.out.println(sceneQuestService.queryById(123456));
 
     }
 
