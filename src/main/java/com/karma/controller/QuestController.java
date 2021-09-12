@@ -41,9 +41,9 @@ public class QuestController {
     }
 
     @RequestMapping("/updateStatus")
-    public String updateStatus(int sceneid,int id,Model model){
+    public String updateStatus(int id,Model model){
         sceneQuestService.updateStatus(id,2);
-        return "redirect:/scene/sceneById?id="+sceneid;
+        return "redirect:/Admin/onesquest";
     }
 
 }

@@ -15,9 +15,8 @@
         <div class="col-lg-1">
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="${pageContext.request.contextPath}/Admin/remove">退出登录</a></li>
-                <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/Admin/onestrip" target="content">景区管理</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/Admin/onestrip" target="content">游记管理</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/Admin/onesquest" target="content">问题管理</a></li>
             </ul>
         </div>
         <div class="col-lg-11">

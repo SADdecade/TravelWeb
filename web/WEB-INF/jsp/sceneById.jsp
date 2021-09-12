@@ -86,7 +86,6 @@
                     <tr>
                         <th>用户问答</th>
                         <th class="text-center">详情</th>
-                        <th class="text-center">其他</th>
                     </tr>
                     </thead>
 
@@ -102,14 +101,14 @@
                                     <c:when test="${quest.status == 2}">已解决</c:when>
                                 </c:choose>
                             </td>
-                            <td class="text-center">
-                                <c:choose>
-                                    <c:when test="${quest.status == 1}">
-                                        <a class="btn btn-default" href="${pageContext.request.contextPath}/quest/updateStatus?sceneid=${scene.id}&id=${quest.id}" role="button">修改状态</a>
-                                    </c:when>
-                                    <c:when test="${quest.status == 2}"></c:when>
-                                </c:choose>
-                            </td>
+                            <%--<td class="text-center">--%>
+                                <%--<c:choose>--%>
+                                    <%--<c:when test="${quest.status == 1}">--%>
+                                        <%--<a class="btn btn-default" href="${pageContext.request.contextPath}/quest/updateStatus?sceneid=${scene.id}&id=${quest.id}" role="button">修改状态</a>--%>
+                                    <%--</c:when>--%>
+                                    <%--<c:when test="${quest.status == 2}"></c:when>--%>
+                                <%--</c:choose>--%>
+                            <%--</td>--%>
                         </tr>
                     </c:forEach>
                     </tbody>
