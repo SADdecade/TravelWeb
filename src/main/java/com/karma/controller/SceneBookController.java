@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/scenebook")
 public class SceneBookController {
@@ -24,10 +26,14 @@ public class SceneBookController {
     }
 
     @RequestMapping("/addscenebook")
-    public String addSceneBook(SceneBook sceneBook){
-        System.out.println(sceneBook);
+    public String addSceneBook(SceneBook sceneBook, HttpSession session){
+
+        Integer idInfo = (Integer) session.getAttribute("userIdInfo");
+        sceneBook.setUserid(idInfo);
         sceneBookService.addSceneBook(sceneBook);
-        return "addsceneSucess";
+        session.removeAttribute("msg");
+        session.setAttribute("msg","预定成功");
+        return "redirect:/User/goMain";
     }
 
     @RequestMapping("/tologin")

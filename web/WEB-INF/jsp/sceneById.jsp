@@ -140,6 +140,18 @@
                 </div>
             </div>
 
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <form action="${pageContext.request.contextPath}/Admin/scenecommend" method="post">
+                        <div class="form-group">
+                            <label>我要评论</label>
+                            <input type="hidden" name="sceneid" value="${scene.id}">
+                            <input type="text" class="form-control" name="mainbody">
+                        </div>
+                        <input type="submit" class="btn btn-default" value="确认"/>
+                    </form>
+                </div>
+            </div>
         <p class="text-center">
             <a class="btn btn-default" href="${pageContext.request.contextPath}/User/goMain" role="button">返回主页</a>
         </p>

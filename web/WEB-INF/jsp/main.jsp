@@ -26,6 +26,12 @@
       })
     }
   </script>
+  <script>
+    if("${msg}" != ""){
+      alert("${msg}");
+    }
+  </script>
+  <c:remove var="msg"></c:remove>
 </head>
 <body>
 <!-- 头部 -->

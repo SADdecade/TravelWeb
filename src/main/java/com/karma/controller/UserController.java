@@ -24,8 +24,6 @@ public class UserController {
 
     @RequestMapping("/goMain")
     public String gomain(HttpSession session){
-        System.out.println("UserName: "+session.getAttribute("userLoginInfo"));
-        System.out.println("UserID: "+session.getAttribute("userIdInfo"));
         return "main";
     }
 
@@ -36,6 +34,7 @@ public class UserController {
             //检测是否插入表成功
             if(userService.addUser(user)==1) {
                 session.setAttribute("userLoginInfo",user.getUsername());
+                session.setAttribute("userIdInfo",userService.queryIdbyName(user));
             }else{
             }
         }else{
@@ -75,6 +74,6 @@ public class UserController {
 
     @RequestMapping("/admin")
     public String admin(){
-        return "admin";
+        return "admin/admin";
     }
 }

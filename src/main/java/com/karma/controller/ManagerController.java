@@ -51,7 +51,6 @@ public class ManagerController {
 
     @RequestMapping("/scene")
     public String scene(@RequestParam(value = "scenename",defaultValue = "") String scenename, @RequestParam(value = "cityid",defaultValue = "0") int cityid, @RequestParam(value = "pn",defaultValue = "1") int pn, Model model){
-        System.out.println("执行");
         PageHelper.startPage(pn,5);
         HashMap map = new HashMap();
         map.put("scenename",scenename);
@@ -62,7 +61,7 @@ public class ManagerController {
         PageInfo page = new PageInfo(scenes,5);
 
         model.addAttribute("pageInfo",page);
-        System.out.println("结束");
+
 
         return "Manager/SceneManage";
     }
