@@ -3,13 +3,6 @@
 <head>
     <title>Title</title>
     <script src="${pageContext.request.contextPath}/js/ajaxfileupload.js"></script>
-    <script>
-        function filechange(){
-            $.ajaxFileUpload(){
-
-            }
-        }
-    </script>
 </head>
 <body>
 

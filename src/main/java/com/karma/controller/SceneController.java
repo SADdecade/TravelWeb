@@ -23,9 +23,13 @@ public class SceneController {
     private SceneService sceneService;
 
     @RequestMapping("/queryall")
-    public String queryall(@RequestParam(value = "pn",defaultValue = "1") int pn, Model model){
-        PageHelper.startPage(pn,5);
+    public String queryall(@RequestParam(value = "scenename",defaultValue = "") String scenename,@RequestParam(value = "cityid",defaultValue = "0") int cityid,@RequestParam(value = "pn",defaultValue = "1") int pn, Model model){
+        PageHelper.startPage(pn,3);
         HashMap map = new HashMap();
+        map.put("scenename",scenename);
+        if(cityid>0){
+            map.put("cityid",cityid);
+        }
         List<Scene> scenes = sceneService.querySceneByMap(map);
         PageInfo page = new PageInfo(scenes,5);
 
