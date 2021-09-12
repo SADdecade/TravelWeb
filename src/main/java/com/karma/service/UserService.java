@@ -26,4 +26,6 @@ public interface UserService {
      */
     boolean login(User user);
 
+
+    int queryIdbyName(User user);
 }

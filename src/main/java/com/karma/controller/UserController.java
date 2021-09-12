@@ -23,7 +23,9 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/goMain")
-    public String gomain(){
+    public String gomain(HttpSession session){
+        System.out.println("UserName: "+session.getAttribute("userLoginInfo"));
+        System.out.println("UserID: "+session.getAttribute("userIdInfo"));
         return "main";
     }
 
@@ -46,6 +48,7 @@ public class UserController {
     public String login(User user,HttpSession session){
         if(userService.login(user)){
             session.setAttribute("userLoginInfo",user.getUsername());
+            session.setAttribute("userIdInfo",userService.queryIdbyName(user));
         }
         return "redirect:/User/goMain";
     }

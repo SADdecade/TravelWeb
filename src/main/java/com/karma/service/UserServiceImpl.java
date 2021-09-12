@@ -27,7 +27,14 @@ public class UserServiceImpl implements UserService{
     @Override
     public boolean login(User user) {
         User user1 = userMapper.doLogin(user);
-        return(user.getPassword().equals(user1.getPassword()));
+        if(user1!=null) {
+            return (user.getPassword().equals(user1.getPassword()));
+        }
+        return false;
     }
 
+    @Override
+    public int queryIdbyName(User user) {
+        return userMapper.doLogin(user).getId();
+    }
 }

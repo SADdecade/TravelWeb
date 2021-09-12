@@ -13,6 +13,9 @@ public class ManagerServiceImpl implements ManagerService{
 
     @Override
     public boolean login(Manager manager) {
-        return managerMapper.login(manager.getUsername()).getPassword().equals(manager.getPassword());
+        if(managerMapper.login(manager.getUsername())!=null){
+        return manager.getPassword().equals(managerMapper.login(manager.getUsername()).getPassword());
+    }
+    return false;
     }
 }

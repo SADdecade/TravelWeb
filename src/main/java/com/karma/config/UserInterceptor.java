@@ -5,6 +5,9 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class UserInterceptor implements HandlerInterceptor {
 
@@ -12,9 +15,16 @@ public class UserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler)throws Exception {
         HttpSession session = req.getSession();
-        if((req.getRequestURI().contains("admin")||req.getRequestURI().contains("addCommend")||req.getRequestURI().contains("addTripNote")||req.getRequestURI().contains("toaddscenebook"))&&session.getAttribute("userLoginInfo")==null){
-            req.getRequestDispatcher("tologin").forward(req,res);
-            return false;
+        List<String> admin = Arrays.asList("admin","addCommend","addTripNote","toaddscenebook" );
+        boolean b = session.getAttribute("userLoginInfo")==null;
+
+        for(String uri : admin){
+            if (req.getRequestURI().contains(uri)){
+                if(b){
+                    req.getRequestDispatcher("tologin").forward(req,res);
+                    return false;
+                }
+            }
         }
         return true;
     }
