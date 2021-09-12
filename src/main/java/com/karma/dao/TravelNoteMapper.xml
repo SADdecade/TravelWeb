@@ -35,5 +35,9 @@
         select * from travelweb.travel_notes where title like concat('%',#{title},'%')
     </select>
 
+    <select id="queryAll" resultType="com.karma.pojo.TravelNote">
+        select * from travelweb.travel_notes
+    </select>
+
 
 </mapper>

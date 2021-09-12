@@ -17,6 +17,6 @@ public class TravelComment {
     private int tripid;
     private int userid;
     private String mainbody;
-    private Date date;
+    private Date time;
 
 }

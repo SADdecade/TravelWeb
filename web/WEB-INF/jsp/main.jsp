@@ -36,7 +36,7 @@
     <a href="#home">首页</a>
     <a href="#book">预定</a>
     <a href="${pageContext.request.contextPath}/scene/queryall">景点</a>
-    <a href="#gallery">游记</a>
+    <a href="${pageContext.request.contextPath}/travelnote/queryAll">游记</a>
     <a href="#contact">联系我们</a>
     <a href="${pageContext.request.contextPath}/User/admin">个人主页</a>
     <a href="${pageContext.request.contextPath}/gofiletest">测试页面</a>
@@ -85,7 +85,7 @@
   </div>
 
   <div class="controls">
-    <span class="vid-btn active" data-src="${pageContext.request.contextPath}/images/vid-1.mp4"></span>
+    <span class="vid-btn active" data-src="${pageContext.request.contextPath}/images/labubu.mp4"></span>
     <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-2.mp4"></span>
     <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-3.mp4"></span>
     <span class="vid-btn" data-src="${pageContext.request.contextPath}/images/vid-4.mp4"></span>
@@ -93,7 +93,7 @@
   </div>
 
   <div class="video-container">
-    <video src="${pageContext.request.contextPath}/images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+    <video src="${pageContext.request.contextPath}/images/labubu.mp4" id="video-slider" loop autoplay muted></video>
   </div>
 
 </section>
