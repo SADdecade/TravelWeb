@@ -4,7 +4,6 @@ import com.karma.dao.ManagerMapper;
 import com.karma.pojo.Manager;
 import org.springframework.stereotype.Service;
 
-@Service
 public class ManagerServiceImpl implements ManagerService{
 
     private ManagerMapper managerMapper;
