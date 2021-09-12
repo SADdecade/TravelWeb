@@ -82,7 +82,6 @@
     <div class="content">
         <h3>旅游是一种信仰</h3>
         <p>和我们一起去远方,寻找诗和梦想</p>
-        <a href="#" class="btn">查看更多</a>
     </div>
 
     <div class="controls">
@@ -95,45 +94,6 @@
 
     <div class="video-container">
         <video src="${pageContext.request.contextPath}/images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
-    </div>
-
-</section>
-<!-- 预订部分 -->
-<section class="book" id="book">
-
-    <h1 class="heading">
-        <span>b</span>
-        <span>o</span>
-        <span>o</span>
-        <span>k</span>
-        <span class="space"></span>
-        <span>n</span>
-        <span>o</span>
-        <span>w</span>
-    </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="${pageContext.request.contextPath}/images/book-img.svg" alt="">
-        </div>
-
-        <form action="">
-            <div class="inputBox">
-                <h3>景点选择</h3>
-                <input type="text" placeholder="请选择景点">
-            </div>
-            <div class="inputBox">
-                <h3>人数</h3>
-                <input type="text" placeholder="请输入人数">
-            </div>
-            <div class="inputBox">
-                <h3>多久到</h3>
-                <input type="date">
-            </div>
-            <input type="submit" class="btn" value="立即 预定">
-        </form>
-
     </div>
 
 </section>
@@ -152,29 +112,29 @@
     <div class="box-container">
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/upload/scene/changsha/juzizhou.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/juzizhou.jpg" alt="">
             <div class="content">
                 <h3> <i class="fas fa-map-marker-alt"></i> 橘子洲 </h3>
-                <p>湘江名洲，由南至北，纵贯江心，西瞻岳麓，东临古城</p>
-                <a href="${pageContext.request.contextPath}/travelnote/travelnoteByCity" class="btn">游记详情</a>
+                <p>湘江名洲，西瞻岳麓，东临古城。</p>
+                <a href="${pageContext.request.contextPath}/scene/sceneById?id=1" class="btn">景点详情</a>
             </div>
         </div>
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/upload/scene/beijing/tiantan.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/tiantan.jpg" alt="">
             <div class="content">
                 <h3> <i class="fas fa-map-marker-alt"></i> 天坛 </h3>
-                <p>皇帝祭天、求雨和祈祷丰年的专用祭坛。</p>
-                <a href="#" class="btn">详情</a>
+                <p>皇帝祭天、求雨的专用祭坛。</p>
+                <a href="${pageContext.request.contextPath}/scene/sceneById?id=9" class="btn">景点详情</a>
             </div>
         </div>
 
         <div class="box">
-            <img src="${pageContext.request.contextPath}/upload/scene/shanghai/waitan.jpg" alt="">
+            <img src="${pageContext.request.contextPath}/upload/scene/waitan.jpg" alt="">
             <div class="content">
                 <h3> <i class="fas fa-map-marker-alt"></i> 外滩 </h3>
                 <p>风格迥异的万国建筑群和浦江夜景。</p>
-                <a href="#" class="btn">详情</a>
+                <a href="${pageContext.request.contextPath}/scene/sceneById?id=11" class="btn">景点详情</a>
             </div>
         </div>
 
