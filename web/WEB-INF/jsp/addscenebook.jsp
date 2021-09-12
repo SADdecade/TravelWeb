@@ -53,10 +53,10 @@
                 <h3>人数</h3>
                 <input type="text" name="num" placeholder="请输入人数">
             </div>
-            <%--<div class="inputBox">--%>
-                <%--<h3>多久到</h3>--%>
-                <%--<input type="date" name="playdate" >--%>
-            <%--</div>--%>
+            <div class="inputBox">
+                <h3>多久到</h3>
+                <input type="date" name="playdate"/>
+            </div>
             <p class="text-center">
                 <input type="submit" class="btn btn-default btn-lg" value="预定">
             </p>
