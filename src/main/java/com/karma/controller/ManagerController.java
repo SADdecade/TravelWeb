@@ -4,8 +4,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.karma.pojo.Manager;
 import com.karma.pojo.Scene;
+import com.karma.pojo.TravelNote;
 import com.karma.service.ManagerService;
 import com.karma.service.SceneService;
+import com.karma.service.TravelNoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -13,11 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 
@@ -69,6 +67,23 @@ public class ManagerController {
     public String remove(HttpSession session){
         session.removeAttribute("managerLoginInfo");
         return "redirect:/User/goMain";
+    }
+
+    @Autowired
+    @Qualifier("TravelNoteServiceImpl")
+    private TravelNoteService travelNoteService;
+
+    @RequestMapping("/travelnote")
+    public String queryAll(@RequestParam(value = "pn",defaultValue = "1") int pn, Model model){
+
+
+        PageHelper.startPage(pn,3);
+        List<TravelNote> travelNotes = travelNoteService.queryAll();
+
+        PageInfo page = new PageInfo(travelNotes,5);
+        model.addAttribute("pageInfo",page);
+
+        return "Manager/TravelnoteManage";
     }
 
 }

@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
-import java.util.HashMap;
 
 public class MyTest {
 
@@ -221,13 +220,16 @@ public class MyTest {
         SceneService sceneService = (SceneService) context.getBean("SceneServiceImpl");
 
 
-        HashMap map=new HashMap();
-        map.put("cityid",1);
-        map.put("scenename","橘子洲");
+//        HashMap map=new HashMap();
+//        map.put("cityid",1);
+//        map.put("scenename","橘子洲");
+//
+//        for (Scene scene : sceneService.querySceneByMap(map)) {
+//            System.out.println(scene);
+//        }
 
-        for (Scene scene : sceneService.querySceneByMap(map)) {
-            System.out.println(scene);
-        }
+        sceneService.deleteSceneById(17);
+
 
     }
 

@@ -18,6 +18,12 @@
             rel="stylesheet">
     <script
             src="${APP_PATH }/js/jquery-3.6.0.js"></script>
+    <script>
+        if("${msg}" != ""){
+            alert("${msg}");
+        }
+    </script>
+    <c:remove var="msg"></c:remove>
 </head>
 <body>
 <!-- 搭建显示页面 -->
@@ -35,6 +41,7 @@
             <button type="submit" class="btn btn-default btn-sm">
                 搜索
             </button>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/scene/toaddscene">新增景区</a>
         </form>
     </div>
     <!-- 显示表格数据 -->
@@ -57,10 +64,9 @@
                         <th>${emp.address }</th>
                         <th>${emp.price }</th>
                         <th>
-                            <button class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                详情
-                            </button>
+                            <a href="${pageContext.request.contextPath}/scene/toupdatescene?id=${emp.id}">修改</a>
+                            &nbsp; | &nbsp;
+                            <a href="${pageContext.request.contextPath}/scene/deletescene?id=${emp.id}">删除</a>
                         </th>
                     </tr>
                 </c:forEach>

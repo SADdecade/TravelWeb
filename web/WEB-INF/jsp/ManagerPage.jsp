@@ -23,8 +23,7 @@
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation"><a href="${pageContext.request.contextPath}/Manager/remove">退出登录</a></li>
                 <li role="presentation" class="active"><a href="${pageContext.request.contextPath}/Manager/scene" target="content">景区管理</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/Manager/travelnote" target="content">游记管理</a></li>
             </ul>
         </div>
         <div class="col-lg-11">

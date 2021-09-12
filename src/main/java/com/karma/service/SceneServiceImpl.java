@@ -31,6 +31,6 @@ public class SceneServiceImpl implements SceneService{
 
     @Override
     public int deleteSceneById(int id) {
-        return 0;
+        return sceneMapper.deleteSceneById(id);
     }
 }
