@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title 管理员宿舍电力限制流程图
+
+actor 管理员 as manager
+boundary 登录页面 as Ipage
+control 登录控制 as Icon
+boundary 电力页面 as Ipage2
+control 电力控制 as Icon2
+database 数据库 as database
+entity 电表 as msg
+
+manager->Ipage:进入登入页面()
+activate Ipage
+Ipage->Icon:用户名+密码
+deactivate Ipage
+activate Icon
+Icon->database:调用数据库查询()
+deactivate Icon
+activate database
+alt 登录成功
+Icon<--database:返回登录信息
+deactivate database
+activate Icon
+Icon-->Ipage:返回登录信息
+deactivate Icon
+activate Ipage
+manager<--Ipage:登录成功，跳转到主页
+deactivate Ipage
+activate manager
+manager->Ipage2:跳转到宿舍电力控制页面
+deactivate manager
+activate Ipage2
+Ipage2->Icon2:cookie
+deactivate Ipage2
+activate Icon2
+Icon2->msg:电表信息写入
+deactivate Icon2
+activate msg
+alt 写入成功
+msg-->Icon2:写入成功
+deactivate msg
+activate Icon2
+Icon2-->Ipage2:写入成功
+deactivate Icon2
+activate Ipage2
+Ipage2-->manager:限制寝室电力成功
+deactivate Ipage2
+else 写入失败
+Icon<--msg:写入失败
+deactivate database
+activate Icon
+Icon-->Ipage:写入失败
+deactivate Icon
+activate Ipage
+manager<--Ipage:写入失败，返回到主页
+deactivate Ipage
+end
+else 登录失败
+Icon<--database:返回登录信息
+deactivate database
+activate Icon
+Icon-->Ipage:返回登录信息
+deactivate Icon
+activate Ipage
+manager<--Ipage:登录失败，跳转到主页
+deactivate Ipage
+end
+
+@enduml
