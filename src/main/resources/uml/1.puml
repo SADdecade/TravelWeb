@@ -1,0 +1,23 @@
+@startuml
+participant Actor
+Actor -> ManagerController : login(manager,session)
+activate ManagerController
+ManagerController -> ManagerService : login(manager)
+activate ManagerService
+ManagerService -> ManagerServiceImpl : login(manager)
+activate ManagerServiceImpl
+ManagerServiceImpl -> ManagerMapper : login(username)
+activate ManagerMapper
+ManagerMapper --> ManagerServiceImpl:
+deactivate ManagerMapper
+ManagerServiceImpl -> ManagerMapper : login(manager)
+activate ManagerMapper
+ManagerMapper --> ManagerServiceImpl:pwd
+deactivate ManagerMapper
+ManagerServiceImpl --> ManagerService:true
+deactivate ManagerServiceImpl
+ManagerService --> ManagerController:true
+ManagerController --> ManagerController:session attribute
+deactivate ManagerService
+return
+@enduml

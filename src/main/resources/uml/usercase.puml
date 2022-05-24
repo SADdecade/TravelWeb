@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+left to right direction
+skinparam packageStyle rectangle
+actor 学生
+actor 管理员
+rectangle checkout {
+  (公告查询) .> (公告管理) : include
+  (电费查询) .> (电费管理) : include
+  (登录)
+}
+学生 --> (公告查询)
+管理员 --> (公告管理)
+管理员 --> (登录)
+学生 --> (登录)
+学生 --> (电费查询)
+管理员 --> (电费管理)
+
+@enduml

@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Ammeter {
+integer domid
+integer type
+boolean status
+integer powerLimit
+date startTime
+date overtime
+integer posPower
+integer balance
+getList()
+getByLimit()
+}
+class Student {
+integer id
+integer domId
+String stuId
+String pwd
+String name
+String tel
+integer ICCardId
+String ICCardPwd
+getList()
+getByLimit()
+login()
+}
+
+class manager{
+integer id
+String account
+String pwd
+String name
+login()
+}
+
+class announce{
+integer id
+String title
+String content
+String amgUrl
+date releaseTime
+integer managerId
+add()
+delete()
+getList()
+getByLimit()
+update()
+}
+
+class powerLog{
+integer domId
+date Time
+integer powernum
+}
+
+class bill{
+integer domId
+date Time
+integer num
+}
+
+Ammeter "1..1"<|--"0..*" powerLog
+Ammeter "1..1"<|--"0..*" bill
+
+Ammeter "1..1"-- "1..*"Student
+Ammeter -- manager
+manager "1..1"--"0..*" announce
+
+@enduml
